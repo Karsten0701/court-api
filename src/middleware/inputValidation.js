@@ -358,7 +358,7 @@ const commonSchemas = {
         maxItems: 100,
         itemSchema: {
           userId: { type: "number", required: true, integer: true, min: 1 },
-          score: { type: "number", required: true, min: 0, max: 100000 },
+          score: { type: "number", required: true, min: -100000, max: 100000 },
         },
       },
     },

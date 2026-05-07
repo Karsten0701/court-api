@@ -681,8 +681,8 @@ The game must be in `ended` state before this can be called.
   "winnerId": 3,
   "scores": [
     { "userId": 3, "score": 21 },
-    { "userId": 5, "score": 15 },
-    { "userId": 7, "score": 9 }
+    { "userId": 5, "score": -15 },
+    { "userId": 7, "score": -9 }
   ]
 }
 ```
@@ -691,6 +691,8 @@ The game must be in `ended` state before this can be called.
 | ---------- | ------- | -------- | ----------------------------------- |
 | `winnerId` | integer | ✅       | `userID` of the winning participant |
 | `scores`   | array   | ✅       | Final score for every participant   |
+
+`scores[].score` accepts values from `-100000` to `100000` (negative values are allowed).
 
 **How ELO is calculated**
 The standard ELO formula (K = 32) is applied. The winner is paired against each loser individually; each loser's rating adjusts based only on their match against the winner.
